@@ -1,0 +1,45 @@
+.headerMenu{
+	margin-top: 10px;
+}
+.info{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 50px;
+	margin-bottom: 20px;
+}
+.name{
+	font-size: 150%;
+	font-weight: 600;
+}
+.icon img{
+	width: 80px;
+	height: 80px;
+}
+.menu{
+	display: flex;
+	justify-content: space-between;
+	column-gap: 15px;
+}
+.button{
+	cursor: pointer;
+	margin-bottom: 1px;
+}
+.blockMenu{
+	position: relative;
+}
+.downBlockMenu{
+	position:  absolute;
+}
+.link{
+	background: #fff;
+	width: 300px;
+	margin-bottom: 1px;
+}
+.button:hover{
+	color:blue;
+}
+ .link:hover{
+	color:blue;
+	box-shadow: 0 0 2px blue;
+}
