@@ -1,5 +1,5 @@
 .headerInfo{
-	padding: 0 15px;
+	padding: 0 15px 10px;
 	background: #2196F3 !important;
 	color: white;
 	text-align: left;
@@ -7,18 +7,36 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
+}
+@media (max-width:754px) {
+	.headerInfo{
+		font-size: 16px;
+		text-align: center;
+		justify-content: center;
+	}
+	.main{
+		justify-content: center;
+	}
+	.phone{
+		font-size: 20px;
+		margin: 10px;
+	}
 }
 .main{
+	flex: 1 1 auto;
 	display: flex;
 	align-items: center;
 	column-gap: 30px;
+	flex-wrap: wrap;
 }
 .mainContent{
-	width: 425px;
+	max-width: 425px;
 }
 .phone{
-
+	margin-right: 20px;
 }
+
 .social{
 	display: flex;
 	column-gap: 10px;

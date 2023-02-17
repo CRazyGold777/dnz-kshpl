@@ -5,32 +5,26 @@ import { useState } from "react"
 
 export const HeaderMenu = () => {
 
-	const [menu, setMenu] = useState({
+	const [menu] = useState({
 		about: {
-			"news/": "Новини",
-			"administration/": "Адміністрація та викладачі",
-			"history/": "Історія ліцею",
-			"gallery/": "Галерея",
-			"regulations/": "Прозорість та інформаційна відкритість навчального закладу",
-			"reports/": "Звіти",
-			"life-stories/": "Історії з життя учнів та педагогічних працівників",
-			"international/": "Експериментальна діяльність регіонального рівня",
-			"contacts/": "Контакти",
-			"material-support/": "Матеріально-технічне забезпечення",
+			"/news/": "Новини",
+			"/administration/": "Адміністрація та викладачі",
+			"/history/": "Історія ліцею",
+			"/gallery/": "Галерея",
 		},
 		forTeacher: {
-
+			"/pupils-teachers/rights-and-obligations/": "Права та обов’язки учня",
+			"/pupils-teachers/distance-learning/": "Дистанційне навчання",
+			"/pupils-teachers/timetable/": "Розклад занять"
 		},
 		entrant: {
-
 		},
 		NPC: {
-
 		},
 		forPartner: {
-
 		}
 	})
+	console.log(window.navigator.userAgentData.platform)
 
 	return (
 		<div className={style.headerMenu + " container"}>
@@ -45,11 +39,11 @@ export const HeaderMenu = () => {
 				</div>
 			</div>
 			<div className={style.menu}>
-				<BlockMenu name='Про нас' array={menu.about} />
-				<BlockMenu name='Учням і педагогам' />
-				<BlockMenu name='Вступникам' />
-				<BlockMenu name='НПЦ' />
-				<BlockMenu name='Партнерам' />
+				<BlockMenu linkBlock="/" name='Про нас' array={menu.about} />
+				<BlockMenu linkBlock="/pupils-teachers" name='Учням і педагогам' array={menu.forTeacher} />
+				<BlockMenu linkBlock="/entrant" name='Вступникам' />
+				<BlockMenu linkBlock="/npc" name='НПЦ' />
+				<BlockMenu linkBlock="/for-partner" name='Партнерам' />
 			</div>
 		</div>
 	)

@@ -1,12 +1,19 @@
 .headerMenu{
 	margin-top: 10px;
 }
+@media (max-width:720px) {
+	.info{
+		font-size: 12px;
+	}
+}
 .info{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 	column-gap: 50px;
 	margin-bottom: 20px;
+	flex-wrap: wrap;
 }
 .name{
 	font-size: 150%;
@@ -20,26 +27,35 @@
 	display: flex;
 	justify-content: space-between;
 	column-gap: 15px;
+	flex-wrap: wrap;
+}
+.menu>div:last-child .downBlockMenu{
+	right: 0;
 }
 .button{
+	padding: 10px;
 	cursor: pointer;
+	position: relative;
 	margin-bottom: 1px;
+}
+.button:hover{
+	color:blue;
+	background: #b4d3ee;
 }
 .blockMenu{
 	position: relative;
 }
 .downBlockMenu{
+	width: 300px;
 	position:  absolute;
 }
 .link{
+	padding: 5px;
 	background: #fff;
-	width: 300px;
+	max-width: 300px;
 	margin-bottom: 1px;
-}
-.button:hover{
-	color:blue;
 }
  .link:hover{
 	color:blue;
-	box-shadow: 0 0 2px blue;
+	box-shadow: 0 0 3px blue;
 }
