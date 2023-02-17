@@ -1,9 +1,5 @@
 .headerInfo{
-	padding: 0 15px 10px;
-	background: #2196F3 !important;
-	color: white;
 	text-align: left;
-	font-size: 110%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

@@ -24,7 +24,8 @@ export const HeaderMenu = () => {
 		forPartner: {
 		}
 	})
-	console.log(window.navigator.userAgentData.platform)
+
+	// console.log(window.navigator.userAgentData.platform)
 
 	return (
 		<div className={style.headerMenu + " container"}>

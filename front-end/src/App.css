@@ -15,7 +15,18 @@
 .wrapper__content{
 	flex: 1 1 100%;
 }
-.wrapper__header-indo{
+.wrapper__header-menu{
+	border-bottom: 0.5px solid #8d8c8c25;
+}
+.wrapper__header-info, .wrapper__footer-info{
 	width: 100%;
+	color: #fff;
 	background: #2196F3;
+	font-size: 110%;
+	padding: 0 15px 5px;
+}
+.wrapper__footer-info{
+	font-size: 90%;
+	text-align: center;
+	padding-top: 5px;
 }
