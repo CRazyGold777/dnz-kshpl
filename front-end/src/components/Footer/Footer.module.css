@@ -1,0 +1,39 @@
+.icon img{
+	width: 80px;
+	height: 80px;
+}
+.footer_container{
+	padding: 15px;
+}
+.social{
+	display: flex;
+	row-gap: 10px;
+	flex-direction: column;
+	justify-content: center;
+}
+.social img{
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+}
+.logo{
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+}
+.info{
+	font-size: 14px;
+	display: flex;
+}
+.contact{
+	flex: 1 1 70%;
+}
+.contact>div{
+	display: flex;
+}
+.contact .name{
+	flex: 0 0 20%;
+}
+.name{
+	font-weight: 700;
+}

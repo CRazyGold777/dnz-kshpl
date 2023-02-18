@@ -18,12 +18,26 @@
 .wrapper__header-menu{
 	border-bottom: 0.5px solid #8d8c8c25;
 }
+.wrapper__header-info{
+	top: 0;
+	position: fixed;
+	z-index: 5;
+}
+.wrapper__header-menu{
+	top: 55px;
+	position: fixed;
+	z-index: 5;
+	width: 100%;
+}
 .wrapper__header-info, .wrapper__footer-info{
 	width: 100%;
-	color: #fff;
+	color: #000;
 	background: #2196F3;
 	font-size: 110%;
 	padding: 0 15px 5px;
+}
+.wrapper__footer{
+	border-top: 0.5px solid #8d8c8c25;
 }
 .wrapper__footer-info{
 	font-size: 90%;
