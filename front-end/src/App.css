@@ -14,9 +14,13 @@
 }
 .wrapper__content{
 	flex: 1 1 100%;
+	margin-top: 170px;
+	padding: 15px 0;
+	background: rgba(0, 0, 0, 0.034);
 }
 .wrapper__header-menu{
 	border-bottom: 0.5px solid #8d8c8c25;
+	background: #fff;
 }
 .wrapper__header-info{
 	top: 0;
@@ -31,7 +35,7 @@
 }
 .wrapper__header-info, .wrapper__footer-info{
 	width: 100%;
-	color: #000;
+	color: #fff;
 	background: #2196F3;
 	font-size: 110%;
 	padding: 0 15px 5px;

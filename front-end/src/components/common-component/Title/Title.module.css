@@ -1,0 +1,19 @@
+.text{
+	color:#2196F3;
+}
+.title{
+	display: flex;
+	align-items: center;
+}
+.cir{
+	border: #2196F3 solid 0.5px;
+	border-radius: 50%;
+	height: 8px;
+	width: 8px;
+	margin-right: 10px;
+}
+.br{
+	display: inline-block;
+	border: #2196F3 solid 0.1px;
+	width: 40px;
+}

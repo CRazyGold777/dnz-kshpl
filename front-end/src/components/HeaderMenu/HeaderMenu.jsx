@@ -35,17 +35,21 @@ export const HeaderMenu = () => {
 						<img src="https://k-shpl.ck.ua/wp-content/uploads/2022/01/%D0%BB%D0%BE%D0%B3%D0%BE%D1%82-%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F-1.png" alt="icon" />
 					</NavLink>
 				</div>
-				<div className={style.name}>
-					ДНЗ “Корсунь-Шевченківський професійний ліцей”
+				<div>
+					<div className={style.name}>
+						ДНЗ “Корсунь-Шевченківський професійний ліцей”
+					</div>
+					<div className={style.menu}>
+						<BlockMenu linkBlock="/" name='Про нас' array={menu.about} />
+						<BlockMenu linkBlock="/pupils-teachers" name='Учням і педагогам' array={menu.forTeacher} />
+						<BlockMenu linkBlock="/entrant" name='Вступникам' />
+						<BlockMenu linkBlock="/npc" name='НПЦ' />
+						<BlockMenu linkBlock="/for-partner" name='Партнерам' />
+					</div>
 				</div>
+
 			</div>
-			<div className={style.menu}>
-				<BlockMenu linkBlock="/" name='Про нас' array={menu.about} />
-				<BlockMenu linkBlock="/pupils-teachers" name='Учням і педагогам' array={menu.forTeacher} />
-				<BlockMenu linkBlock="/entrant" name='Вступникам' />
-				<BlockMenu linkBlock="/npc" name='НПЦ' />
-				<BlockMenu linkBlock="/for-partner" name='Партнерам' />
-			</div>
+
 		</div>
 	)
 }

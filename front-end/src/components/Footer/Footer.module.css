@@ -24,6 +24,7 @@
 .info{
 	font-size: 14px;
 	display: flex;
+	column-gap: 15px;
 }
 .contact{
 	flex: 1 1 70%;

@@ -24,6 +24,7 @@
 	height: 80px;
 }
 .menu{
+	text-align: left;
 	display: flex;
 	justify-content: space-between;
 	column-gap: 15px;
@@ -48,6 +49,7 @@
 .downBlockMenu{
 	width: 300px;
 	position:  absolute;
+	background: #fff;
 }
 .link{
 	padding: 5px;

@@ -4,6 +4,10 @@ import { HeaderInfo } from './components/HeaderInfo/HeaderInfo';
 import { HeaderMenu } from './components/HeaderMenu/HeaderMenu';
 import { FooterInfo } from './components/FooterInfo/FooterInfo';
 import { Footer } from './components/Footer/Footer';
+import { Main } from './components/content-components/Main/Main';
+import { News } from './components/content-components/News/News';
+import { NewsPage } from './components/content-components/NewsPage/NewsPage';
+
 
 function App() {
 	return (
@@ -16,66 +20,14 @@ function App() {
 					<HeaderMenu />
 				</nav>
 				<div className='wrapper__content'>
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
+					<div className='container'>
+						<Routes>
+							<Route path='/' element={<Main />} />
+							<Route path="news" element={<News />} />
+							<Route path="news-page" element={<NewsPage />} />
+							<Route path="*" element={404} />
+						</Routes>
+					</div>
 				</div>
 				<div className='wrapper__footer'>
 					<Footer />
