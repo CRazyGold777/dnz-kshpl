@@ -35,6 +35,7 @@
 .dopImg{
 	display: flex;
 	justify-content: space-around;
+	column-gap: 20px;
 }
 .dopImg div{
 	max-width: 330px;

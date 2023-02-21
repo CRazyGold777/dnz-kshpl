@@ -9,3 +9,7 @@ export const getCountNews = state => {
 export const getNewsPage = state => {
 	return state.newsPage.news;
 }
+
+export const getCountNotion = state => {
+	return state.news.countNotion;
+}
