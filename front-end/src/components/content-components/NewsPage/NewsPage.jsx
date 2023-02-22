@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { connect } from "react-redux"
 import { useLocation } from "react-router-dom";
-import { getNewsPage } from "../../../selectors/selectors-news";
+import { getNewsPage } from "../../../selectors/simple-selector";
 import { setNewsPageTC } from '../../../redux/newsPageReducer'
 import { NewBlock } from '../../common-component/New/NewBlock'
 import style from './NewsPage.module.css'

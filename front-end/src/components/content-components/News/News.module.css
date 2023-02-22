@@ -40,11 +40,11 @@
 	background: #2991e6;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.295);
 }
-.notion>div:first-child{
+.notion>div{
 	display: flex;
 	flex-wrap: wrap;
-	gap: 15px;
-	justify-content: space-around;
+	gap: 30px;
+	justify-content: center;
 }
 .notion>div>a{
 	flex: 1 1 50%;

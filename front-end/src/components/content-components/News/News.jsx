@@ -1,11 +1,13 @@
 import style from './News.module.css'
 import { connect } from 'react-redux'
-import { getCountNews, getCountNotion } from '../../../selectors/selectors-news'
+import { getCountNews, getCountNotion } from '../../../selectors/simple-selector'
 import { NewBlock } from '../../common-component/New/NewBlock'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { setNewsTC, setNotionTC } from '../../../redux/newsReducer.js'
+import { setNewsTC } from '../../../redux/newsReducer.js'
+import { setNotionTC } from '../../../redux/notionReducer.js'
 import { Title } from '../../common-component/Title/Title.jsx'
+import { NotionBlock } from '../../common-component/Notion/NotionBlock'
 
 export const NewsBlock = props => {
 
@@ -51,7 +53,7 @@ export const NewsBlock = props => {
 					</div>
 					:
 					<div className={style.notion}>
-						<NewBlock length={localCountNotion} />
+						<NotionBlock length={localCountNotion} />
 						{props.countNotion > localCountNotion && <div className={style.divButton}><button onClick={changeCountNotion}>Показати більше</button></div>}
 					</div>
 			}

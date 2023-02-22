@@ -60,9 +60,7 @@ const initiatState = {
 			subText: "Манрдівний учитель життя до 300-річчя від дня народження Григорія Сковороди",
 		},
 	],
-	notionArray: [],
 	countNews: 8,
-	countNotion: 5,
 }
 
 export const newsReducer = (state = initiatState, action) => {
@@ -81,9 +79,5 @@ export const newsReducer = (state = initiatState, action) => {
 // const setNewsArray = (newsArray, count) => ({ type: SET_NEWS, newsArray, count })
 
 export const setNewsTC = (count) => dispatch => {
-	console.log(count);
-}
-
-export const setNotionTC = (count) => dispatch => {
 	console.log(count);
 }

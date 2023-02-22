@@ -1,0 +1,28 @@
+.cut{
+	width: 16px;
+    height: 16px;
+	border-top: 1px solid #42A5F5 ;
+    border-right: 1px solid #42A5F5 ;
+    transform: rotate(41.27deg);
+}
+.button{
+	font-weight: 600;
+	max-width: 250px;
+}
+.button>a{
+	display: flex;
+	align-items: center;
+	padding: 15px;
+}
+.button>a:hover .cut{
+	border-top: 1px solid #FDD835 ;
+    border-right: 1px solid #FDD835 ;
+}
+.button:hover{
+	background: #3a99ff4d;
+	border-radius: 5px;
+	color: #42A5F5;
+}
+.p{
+	margin-left: 15px;
+}
