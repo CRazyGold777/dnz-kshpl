@@ -7,6 +7,7 @@ import { Footer } from './components/Footer/Footer';
 import { Main } from './components/content-components/Main/Main';
 import { News } from './components/content-components/News/News';
 import { NewsPage } from './components/content-components/NewsPage/NewsPage';
+import { Login } from './components/content-components/Login/Login';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 					<div className='container'>
 						<Routes>
 							<Route path='/' element={<Main />} />
+							<Route path="login" element={<Login />} />
 							<Route path="news" element={<News />} />
 							<Route path="news-page" element={<NewsPage />} />
 							<Route path="*" element={404} />
