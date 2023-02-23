@@ -17,3 +17,22 @@ export const getCountNotion = state => {
 export const getNotion = state => {
 	return state.notion.notionArray;
 }
+
+export const getMessage = state => {
+	return state.auth.message
+}
+
+export const isAuth = state => {
+	return state.auth.isAuth
+}
+
+export const getStatus = state => {
+	return state.auth.statusUser
+}
+
+export const getAUsersSelect = state => {
+	return state.adminUsers.users
+}
+export const getAUserscount = state => {
+	return state.adminUsers.count
+}

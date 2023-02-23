@@ -1,0 +1,15 @@
+.person{
+	color: black;
+	display: flex;
+	min-width: 30px;
+	min-height: 30px;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border-radius: 50%;
+	padding:  5px 13px;
+	margin-left: 10px;
+}
+.person>div{
+	margin-left: 20px;
+}

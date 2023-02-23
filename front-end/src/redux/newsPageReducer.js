@@ -45,7 +45,7 @@ export const newsPageReducer = (state = initiatState, action) => {
 	}
 }
 
-const setNews = (news) => ({ type: SET_NEWS, news })
+// const setNews = (news) => ({ type: SET_NEWS, news })
 
 export const setNewsPageTC = (url) => dispatch => {
 	console.log(url);

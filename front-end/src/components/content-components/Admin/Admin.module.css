@@ -1,0 +1,12 @@
+.admin{
+	display: flex;
+	justify-content: space-around;
+}
+
+.userInTable{
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr 50px 50px;
+}
+.userInTable>div{
+
+}

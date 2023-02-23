@@ -8,6 +8,12 @@ import { Main } from './components/content-components/Main/Main';
 import { News } from './components/content-components/News/News';
 import { NewsPage } from './components/content-components/NewsPage/NewsPage';
 import { Login } from './components/content-components/Login/Login';
+import { PageNotFound } from './components/content-components/PageNotFound/PageNotFound';
+import { TimeTable } from './components/content-components/TimeTable/TimeTable';
+import { Admin } from './components/content-components/Admin/Admin';
+import { AdminUsers } from './components/content-components/Admin/AdminUsers';
+import { AdminNews } from './components/content-components/Admin/AdminNews';
+import { AdminNotion } from './components/content-components/Admin/AdminNotion';
 
 
 function App() {
@@ -27,7 +33,12 @@ function App() {
 							<Route path="login" element={<Login />} />
 							<Route path="news" element={<News />} />
 							<Route path="news-page" element={<NewsPage />} />
-							<Route path="*" element={404} />
+							<Route path="pupils-teachers/timetable/" element={<TimeTable />} />
+							<Route path="admin" element={<Admin />} />
+							<Route path="admin/users" element={<AdminUsers />} />
+							<Route path="admin/news" element={<AdminNews />} />
+							<Route path="admin/notion" element={<AdminNotion />} />
+							<Route path="*" element={<PageNotFound />} />
 						</Routes>
 					</div>
 				</div>

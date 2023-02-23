@@ -1,16 +1,23 @@
-const Pool = require('pg').Pool
+import pg from 'pg'
 
-const pool = new Pool({
+const config = {
 	user: 'postgres',
 	host: 'localhost',
 	database: 'dnz-kshpl',
 	password: 'root',
 	port: 5432,
-});
+};
 
+const client = new pg.Client(config);
 
+client.connect(err => {
+	if (err) {
+		throw err;
+	} else {
+		console.log("connect ok");
+	}
+})
 
-
-
-
-module.exports = pool
+export const queryToDB = (query) => {
+	return client.query(query)
+}

@@ -1,3 +1,4 @@
+import { Person } from '../common-component/Person/Person'
 import style from './HeaderInfo.module.css'
 
 export const HeaderInfo = (props) => {
@@ -24,6 +25,7 @@ export const HeaderInfo = (props) => {
 					</a>
 				</div>
 			</div>
+			<Person />
 		</div>
 	)
 }

@@ -1,19 +1,40 @@
+import { authAPI } from '../api/api.js'
+
+const SET_STATUS = "SET_STATUS"
 
 const initiatState = {
-	auth: false,
-	statusUser: null,
+	isAuth: false,
+	statusUser: "admin",
+	message: null,
 }
 
 export const authReducer = (state = initiatState, action) => {
 	switch (action.type) {
-
+		case SET_STATUS:
+			return {
+				...state,
+				isAuth: action.auth,
+				statusUser: action.status,
+				message: action.message
+			}
 		default:
 			return state;
 	}
 }
 
-// const setNewsArray = (newsArray, count) => ({ type: SET_NEWS, newsArray, count })
+const setStatus = (status, auth, message) => ({ type: SET_STATUS, status, auth, message })
 
 export const setUser = (user) => dispatch => {
-	console.log(user);
+	authAPI.getStatusUser(user.email, user.password).then(res => {
+		console.log(res);
+		if (res.resultCode === 0) {
+			dispatch(setStatus(res.status, true, res.message))
+		} else {
+			dispatch(setStatus(res.status, false, res.message))
+		}
+	})
+}
+
+export const logOut = () => dispatch => {
+	dispatch(setStatus(null, false, null))
 }
