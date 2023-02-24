@@ -6,7 +6,7 @@ import { howLength } from '../../../function/function'
 
 const Block = props => {
 	return (
-		<Link key={props.id} to={"/news-page?" + props.link} className={style.new}>
+		<Link key={props.id} to={"/news-page?news=" + props.id} className={style.new}>
 			<div className={style.title}>
 				{props.title}
 			</div>
@@ -28,7 +28,7 @@ const NewBlockContainer = props => {
 
 		for (let i = 0; i < howLength(props.length, props.countNews); i++) {
 			let n = props.news[i]
-			mas.push(<Block id={n.id} link={n.link} title={n.title} img={n.img} subText={n.subText} />)
+			mas.push(<Block id={n.id} title={n.title} img={n.img} subText={n.subText} />)
 		}
 		return mas;
 	}

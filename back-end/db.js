@@ -19,5 +19,9 @@ client.connect(err => {
 })
 
 export const queryToDB = (query) => {
-	return client.query(query)
+	try {
+		return client.query(query)
+	} catch (error) {
+		return error
+	}
 }

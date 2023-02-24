@@ -5,7 +5,6 @@ const initiatState = {
 	newsArray: [
 		{
 			id: 1,
-			link: "news=1",
 			title: "До 300-річчя Григорія",
 			img: "https://k-shpl.ck.ua/wp-content/uploads/2021/03/318216364_1379409356135550_1803281234786392850_n-1024x768.jpg",
 			subText: "Манрдівний учитель життя до 300-річчя від дня народження Григорія Сковороди",

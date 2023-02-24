@@ -15,7 +15,7 @@ export const NewsPageBlock = props => {
 	return (
 		<div className={style.newsPage}>
 			<div className={style.mainNews}>
-				<div className={style.data}>{props.news.data}</div>
+				<div className={style.data}>{props.news.date}</div>
 				<div className={style.title}>{props.news.title}</div>
 				<div className={style.img}><img src={props.news.img} alt="img" /></div>
 				<div className={style.text}>{props.news.text}</div>

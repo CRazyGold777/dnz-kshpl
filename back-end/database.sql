@@ -14,7 +14,6 @@ create TABLE notion(
 
 create TABLE news(
 	id SERIAL PRIMARY KEY,
-	link VARCHAR(20),
 	title VARCHAR(255),
 	img VARCHAR(255),
 	subText VARCHAR(255),
