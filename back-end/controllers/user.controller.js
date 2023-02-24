@@ -8,7 +8,6 @@ class UserController {
 			.then(() => {
 				res.json('Users added')
 			})
-		res.json('Somsing wrong')
 	}
 	async getUsers(req, res) {
 		const { limit } = req.query

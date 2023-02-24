@@ -36,7 +36,7 @@ export const NewsBlock = props => {
 	}, [localCountNews])
 
 	useEffect(() => {
-		props.setNewsTC(localCountNotion)
+		props.setNotionTC(localCountNotion)
 	}, [localCountNotion])
 
 	return (

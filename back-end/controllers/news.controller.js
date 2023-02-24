@@ -4,7 +4,7 @@ class NewsController {
 	async createNews(req, res) {
 		const { title, img, subtext, text, dopimg } = req.body
 		let query = null
-		if (dopimg) {
+		if (dopimg !== "null") {
 			query = `INSERT INTO news (title, img, subtext,date,text,dopimg) VALUES ('${title}','${img}','${subtext}',NOW(),'${text}','${dopimg}');`;
 		}
 		else {
@@ -14,7 +14,6 @@ class NewsController {
 			.then(() => {
 				res.json('News added')
 			})
-		res.json('Somsing wrong')
 	}
 	async getNews(req, res) {
 		const { limit } = req.query
@@ -53,10 +52,10 @@ class NewsController {
 		res.json(result.rows);
 	}
 	async updateNews(req, res) {
-		console.log(req.body);
 		const { id, title, img, subtext, text, dopimg } = req.body
 		let query = null
-		if (dopimg) {
+
+		if (dopimg !== "null") {
 			query = `UPDATE news SET title='${title}', img='${img}', subtext='${subtext}', text='${text}' dopimg='${dopimg}' WHERE id = '${id}' `;
 		}
 		else {

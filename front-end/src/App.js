@@ -13,7 +13,10 @@ import { TimeTable } from './components/content-components/TimeTable/TimeTable';
 import { Admin } from './components/content-components/Admin/Admin';
 import { AdminUsers } from './components/content-components/Admin/AdminUsers';
 import { AdminNews } from './components/content-components/Admin/AdminNews';
+import { AdminNew } from './components/content-components/Admin/AdminNew';
 import { AdminNotion } from './components/content-components/Admin/AdminNotion';
+import { AdminNotions } from './components/content-components/Admin/AdminNotions';
+import { AdminUser } from './components/content-components/Admin/AdminUser';
 
 
 function App() {
@@ -36,8 +39,14 @@ function App() {
 							<Route path="pupils-teachers/timetable/" element={<TimeTable />} />
 							<Route path="admin" element={<Admin />} />
 							<Route path="admin/users" element={<AdminUsers />} />
+							<Route path="admin/user/:id" element={<AdminUser />} />
+							<Route path="admin/user/create" element={<AdminUser />} />
 							<Route path="admin/news" element={<AdminNews />} />
-							<Route path="admin/notion" element={<AdminNotion />} />
+							<Route path="admin/new/:id" element={<AdminNew />} />
+							<Route path="admin/new/create" element={<AdminNew />} />
+							<Route path="admin/notions" element={<AdminNotions />} />
+							<Route path="admin/notion/:id" element={<AdminNotion />} />
+							<Route path="admin/notion/create" element={<AdminNotion />} />
 							<Route path="*" element={<PageNotFound />} />
 						</Routes>
 					</div>

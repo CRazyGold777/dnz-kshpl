@@ -8,7 +8,6 @@ class NotionController {
 			.then(() => {
 				res.json('Notion added')
 			})
-		res.json('Somsing wrong')
 	}
 	async getNotions(req, res) {
 		const { limit } = req.query
