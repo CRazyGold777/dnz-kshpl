@@ -10,9 +10,6 @@ export const getNewsPage = state => {
 export const getCountNotion = state => {
 	return state.notion.countNotion;
 }
-export const getNotion = state => {
-	return state.notion.notionArray;
-}
 export const getMessage = state => {
 	return state.auth.message
 }
@@ -36,4 +33,13 @@ export const getSSubNew = state => {
 }
 export const getNew = state => {
 	return state.adminUsers.new
+}
+export const getNotions = state => {
+	return state.adminUsers.notions
+}
+export const getNotion = state => {
+	return state.adminUsers.notion
+}
+export const getNotionFromNR = state => {
+	return state.notion.nArray
 }

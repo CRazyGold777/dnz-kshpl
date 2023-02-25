@@ -98,6 +98,7 @@ export const getAUsers = (count) => dispatch => {
 		})
 }
 export const getAUserById = (id) => dispatch => {
+	dispatch(setUser({}))
 	usersAPI.getUsersById(id)
 		.then(res => {
 			dispatch(setUser(res[0]))

@@ -4,7 +4,7 @@ const SET_STATUS = "SET_STATUS"
 
 const initiatState = {
 	isAuth: false,
-	statusUser: "admin",
+	statusUser: null,
 	message: null,
 }
 

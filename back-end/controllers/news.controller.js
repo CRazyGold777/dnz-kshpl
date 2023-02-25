@@ -5,10 +5,10 @@ class NewsController {
 		const { title, img, subtext, text, dopimg } = req.body
 		let query = null
 		if (dopimg !== "null") {
-			query = `INSERT INTO news (title, img, subtext,date,text,dopimg) VALUES ('${title}','${img}','${subtext}',NOW(),'${text}','${dopimg}');`;
+			query = `INSERT INTO news (title, img, subtext,date,text,dopimg) VALUES ('${title}','${img}','${subtext}',CURRENT_DATE,'${text}','${dopimg}');`;
 		}
 		else {
-			query = `INSERT INTO news (title, img, subtext,date,text) VALUES ('${title}','${img}','${subtext}',NOW(),'${text}');`;
+			query = `INSERT INTO news (title, img, subtext,date,text) VALUES ('${title}','${img}','${subtext}',CURRENT_DATE,'${text}');`;
 		}
 		await queryToDB(query)
 			.then(() => {
@@ -55,7 +55,7 @@ class NewsController {
 		const { id, title, img, subtext, text, dopimg } = req.body
 		let query = null
 
-		if (dopimg !== "null") {
+		if (dopimg !== "") {
 			query = `UPDATE news SET title='${title}', img='${img}', subtext='${subtext}', text='${text}' dopimg='${dopimg}' WHERE id = '${id}' `;
 		}
 		else {

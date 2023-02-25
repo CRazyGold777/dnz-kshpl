@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 const LoginForm = (props) => {
 	const navigate = useNavigate()
 	useEffect(() => {
-
 		if (props.isAuth) {
 			navigate("/")
 		}
@@ -24,10 +23,6 @@ const LoginForm = (props) => {
 					const errors = {};
 					if (!values.email) {
 						errors.email = 'Required';
-					} else if (
-						!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-					) {
-						errors.email = 'Invalid email address';
 					} else if (!values.password) {
 						errors.password = 'Required';
 					}
@@ -41,7 +36,7 @@ const LoginForm = (props) => {
 				{({ isSubmitting }) => (
 					<Form className={style.form}>
 						<h1>Login</h1>
-						<Field type="email" name="email" />
+						<Field type="text" name="email" />
 						<ErrorMessage name="email" component="div" />
 						<Field type="password" name="password" />
 						<ErrorMessage name="password" component="div" />

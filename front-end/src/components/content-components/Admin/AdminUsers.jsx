@@ -5,6 +5,7 @@ import { getAUsersSelect, getAUserscount } from '../../../selectors/simple-selec
 import style from './Admin.module.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { AuthRedirectAdmin } from '../../../hook/AuthRedirectAdmin'
 
 const AUsers = props => {
 	const [count, changeCount] = useState(10)
@@ -52,4 +53,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export const AdminUsers = connect(mapStateToProps, { getAUsers, deleteAUser })(AUsers)
+export const AdminUsers = AuthRedirectAdmin(connect(mapStateToProps, { getAUsers, deleteAUser })(AUsers))

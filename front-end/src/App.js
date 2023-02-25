@@ -35,7 +35,7 @@ function App() {
 							<Route path='/' element={<Main />} />
 							<Route path="login" element={<Login />} />
 							<Route path="news" element={<News />} />
-							<Route path="news-page" element={<NewsPage />} />
+							<Route path="news-page/:id" element={<NewsPage />} />
 							<Route path="pupils-teachers/timetable/" element={<TimeTable />} />
 							<Route path="admin" element={<Admin />} />
 							<Route path="admin/users" element={<AdminUsers />} />

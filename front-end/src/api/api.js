@@ -18,7 +18,6 @@ export const usersAPI = {
 	createUser(login, password, status) {
 		return instance.post('user', { login, password, status })
 			.then(res => {
-				debugger
 				return res.data
 			})
 	},
@@ -37,7 +36,6 @@ export const usersAPI = {
 	updateUser(id, login, password, status) {
 		return instance.put('user', { id, login, password, status })
 			.then(res => {
-				debugger
 				return res.data
 			})
 	},
@@ -108,10 +106,9 @@ export const notionAPI = {
 			})
 	},
 	getNotionById(id) {
-		return instance.get(`notion/${id}`)
-			.then(res => {
-				return res.data
-			})
+		return instance.get(`notion/${id}`).then(res => {
+			return res.data
+		})
 	},
 	updateNotion(id, title, text) {
 		return instance.put('notion', { id, title, text })

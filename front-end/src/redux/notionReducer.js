@@ -1,62 +1,29 @@
-const SET_NOTION = "SET_NOTION";
+import { notionAPI } from "../api/api"
+
+const SET_NOTION_R = "SET_NOTION_R";
+
 
 const initiatState = {
-	notionArray: [
-		{
-			id: 1,
-			data: "01.02.2022",
-			title: "ТЕРМІНИ ПРОВЕДЕННЯ ВСТУПНОЇ КАМПАНІЇ У 2022 РОЦІ",
-			text: 'Дата вступної кампанії до ДНЗ "Корсунь-Шевченківський професійний ліцей" та прийом заяв та документів у 2022 році розпочнеться з 1 червня.'
-		},
-		{
-			id: 2,
-			data: "01.02.2022",
-			title: "ТЕРМІНИ ПРОВЕДЕННЯ ВСТУПНОЇ КАМПАНІЇ У 2022 РОЦІ",
-			text: 'Дата вступної кампанії до ДНЗ "Корсунь-Шевченківський професійний ліцей" та прийом заяв та документів у 2022 році розпочнеться з 1 червня.'
-		},
-		{
-			id: 3,
-			data: "01.02.2022",
-			title: "ТЕРМІНИ ПРОВЕДЕННЯ ВСТУПНОЇ КАМПАНІЇ У 2022 РОЦІ",
-			text: 'Дата вступної кампанії до ДНЗ "Корсунь-Шевченківський професійний ліцей" та прийом заяв та документів у 2022 році розпочнеться з 1 червня.'
-		},
-		{
-			id: 1,
-			data: "01.02.2022",
-			title: "ТЕРМІНИ ПРОВЕДЕННЯ ВСТУПНОЇ КАМПАНІЇ У 2022 РОЦІ",
-			text: 'Дата вступної кампанії до ДНЗ "Корсунь-Шевченківський професійний ліцей" та прийом заяв та документів у 2022 році розпочнеться з 1 червня.'
-		},
-		{
-			id: 2,
-			data: "01.02.2022",
-			title: "ТЕРМІНИ ПРОВЕДЕННЯ ВСТУПНОЇ КАМПАНІЇ У 2022 РОЦІ",
-			text: 'Дата вступної кампанії до ДНЗ "Корсунь-Шевченківський професійний ліцей" та прийом заяв та документів у 2022 році розпочнеться з 1 червня.'
-		},
-		{
-			id: 3,
-			data: "01.02.2022",
-			title: "ТЕРМІНИ ПРОВЕДЕННЯ ВСТУПНОЇ КАМПАНІЇ У 2022 РОЦІ",
-			text: 'Дата вступної кампанії до ДНЗ "Корсунь-Шевченківський професійний ліцей" та прийом заяв та документів у 2022 році розпочнеться з 1 червня.'
-		},
-	],
-	countNotion: 5,
+	nArray: []
 }
 
 export const notionReducer = (state = initiatState, action) => {
 	switch (action.type) {
-		case SET_NOTION:
+		case SET_NOTION_R:
 			return {
 				...state,
-				notionArray: [...action.notionArray],
-				countNews: action.count
+				nArray: [...action.nArray]
 			};
 		default:
 			return state;
 	}
 }
 
-// const setNotionArray = (notionArray, count) => ({ type: SET_NOTION, notionArray, count })
+const setNotionArray = (nArray) => ({ type: SET_NOTION_R, nArray })
 
 export const setNotionTC = (count) => dispatch => {
-	console.log(count);
+	notionAPI.getNotion(count)
+		.then(res => {
+			dispatch(setNotionArray(res));
+		})
 }

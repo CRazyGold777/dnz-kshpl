@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { getNewsById, updateNews, createNews } from '../../../redux/admin-reducer.js'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import style from './Admin.module.css'
+import { AuthRedirectAdmin } from "../../../hook/AuthRedirectAdmin";
 
 const NewBlock = props => {
 
@@ -21,7 +22,7 @@ const NewBlock = props => {
 			<h1>Edit New</h1>
 			<Formik
 				initialValues={{
-					dopimg: props.new.dopimg,
+					dopimg: '',
 					img: props.new.img,
 					subtext: props.new.subtext,
 					text: props.new.text,
@@ -92,4 +93,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export const AdminNew = connect(mapStateToProps, { getNewsById, updateNews, createNews })(ContainerNew)
+export const AdminNew = AuthRedirectAdmin(connect(mapStateToProps, { getNewsById, updateNews, createNews })(ContainerNew))

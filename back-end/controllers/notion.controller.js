@@ -3,7 +3,7 @@ import { queryToDB } from '../db.js'
 class NotionController {
 	async createNotion(req, res) {
 		const { title, text } = req.body
-		const query = `INSERT INTO notion (date, title, text) VALUES (now(), '${title}','${text}');`
+		const query = `INSERT INTO notion (date, title, text) VALUES (CURRENT_DATE, '${title}','${text}');`
 		await queryToDB(query)
 			.then(() => {
 				res.json('Notion added')

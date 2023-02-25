@@ -5,6 +5,7 @@ import { getSSubNew } from '../../../selectors/simple-selector'
 import style from './Admin.module.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { AuthRedirectAdmin } from '../../../hook/AuthRedirectAdmin'
 
 const ANews = props => {
 	const [count, changeCount] = useState(10)
@@ -34,7 +35,9 @@ const ANews = props => {
 						<div className={style.userInTable}>
 							<div>{u.title}</div>
 							<div>{u.subtext}</div>
-							<div>{u.title}</div>
+							<div>
+								<img src={u.img} alt="" />
+							</div>
 							<div><Link to={"/admin/new/" + u.id}>Edit</Link></div>
 							<button onClick={deleteNews} value={u.id}>Delete</button>
 						</div>
@@ -51,4 +54,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export const AdminNews = connect(mapStateToProps, { getSubNews, deleteNews })(ANews)
+export const AdminNews = AuthRedirectAdmin(connect(mapStateToProps, { getSubNews, deleteNews })(ANews))
