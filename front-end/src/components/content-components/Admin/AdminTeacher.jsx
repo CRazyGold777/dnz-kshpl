@@ -1,0 +1,84 @@
+import { connect } from "react-redux";
+import { getTeacherSelect } from "../../../selectors/simple-selector";
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect } from "react";
+import { getTeacherById, updateTeacher, createTeacher } from '../../../redux/admin-reducer.js'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import style from './Admin.module.css'
+import { AuthRedirectAdmin } from "../../../hook/AuthRedirectAdmin";
+import { AdminPanel } from "../../common-component/Button/ButtonAdminPanel";
+
+const Block = props => {
+	let navigate = useNavigate();
+	const onSubmit = (value) => {
+		if (props.id) {
+			props.updateTeacher(props.id, value.pib);
+		} else {
+			props.createTeacher(value.pib)
+		}
+		navigate("/admin/teacher")
+	}
+	let pib;
+	if (props.id) {
+		pib = props.teacher.pib_teacher
+	}
+
+	return (
+		<div>
+			<AdminPanel />
+			<h1>Edit Teacher</h1>
+			<Formik
+				initialValues={{ pib }}
+				validate={values => {
+					const errors = {};
+					if (!values.pib) {
+						errors.pib = 'Required';
+					}
+					return errors;
+				}}
+				onSubmit={(values, { setSubmitting }) => {
+					onSubmit(values)
+					setSubmitting(false);
+				}}
+			>
+				{({ isSubmitting }) => (
+					<Form className={style.form}>
+						<p>PIB</p>
+						<Field name="pib" />
+						<ErrorMessage name="pib" component="div" />
+						<button type="submit" disabled={isSubmitting}>
+							Submit
+						</button>
+					</Form>
+				)}
+			</Formik>
+
+		</div>
+	)
+}
+
+const Container = props => {
+	const up = useParams()
+
+	useEffect(() => {
+		if (Object.keys(up).length !== 0) {
+			props.getTeacherById(up.id);
+		}
+	}, [])
+	if (!up.id) {
+		return <Block {...props} />
+	}
+	else if (up.id && Object.keys(props.teacher).length > 0) {
+		return <Block {...props} id={up.id} />
+	}
+
+}
+
+const mapStateToProps = state => {
+	return {
+		teacher: getTeacherSelect(state),
+	}
+}
+
+
+export const AdminTeacher = AuthRedirectAdmin(connect(mapStateToProps, { getTeacherById, updateTeacher, createTeacher })(Container))

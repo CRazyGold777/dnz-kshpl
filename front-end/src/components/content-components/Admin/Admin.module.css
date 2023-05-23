@@ -1,6 +1,8 @@
 .admin{
-	display: flex;
-	justify-content: space-around;
+	display: grid;
+	grid-template-columns:repeat(5,1fr);
+	grid-gap: 20px;
+	text-align: center;
 }
 .header{
 	background: rgba(25, 101, 241, 0.582);
@@ -27,7 +29,7 @@
 	background-color: #D6EEEE;
 }
 .userInTable img{
-	width: 100px;
+	width: 80px;
 }
 .form{
 	display: flex;
@@ -59,4 +61,21 @@
 }
 .form div{
 	color: red;
+}
+.InTable{
+	max-height: 90px;
+	overflow: hidden;
+	display: grid;
+}
+.InTable:nth-child(even) {
+	background-color: #D6EEEE;
+}
+.teacherInTable{
+	grid-template-columns:1fr 50px 50px;
+}
+.studentInTable, .courseInTable{
+	grid-template-columns:1fr 1fr 50px 50px;
+}
+.lessonInTable{
+	grid-template-columns:repeat(4,1fr) repeat(2,50px);
 }

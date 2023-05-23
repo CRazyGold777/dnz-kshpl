@@ -6,6 +6,7 @@ import style from './Admin.module.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { AuthRedirectAdmin } from '../../../hook/AuthRedirectAdmin'
+import { AdminPanel } from '../../common-component/Button/ButtonAdminPanel'
 
 const AUsers = props => {
 	const [count, changeCount] = useState(10)
@@ -20,6 +21,7 @@ const AUsers = props => {
 
 	return (
 		<div>
+			<AdminPanel />
 			<div className={style.header}>
 				<h1>Users</h1>
 				<Link to='/admin/user/create'>Create User</Link>

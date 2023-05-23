@@ -23,8 +23,6 @@ const Block = props => {
 	)
 }
 
-
-
 const NewBlockContainer = props => {
 
 	useEffect(() => {

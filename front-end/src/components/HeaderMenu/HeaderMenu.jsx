@@ -8,13 +8,13 @@ export const HeaderMenu = () => {
 	const [menu] = useState({
 		about: {
 			"/news/": "Новини",
-			"/administration/": "Адміністрація та викладачі",
-			"/history/": "Історія ліцею",
-			"/gallery/": "Галерея",
+			// "/administration/": "Адміністрація та викладачі",
+			// "/history/": "Історія ліцею",
+			// "/gallery/": "Галерея",
 		},
 		forTeacher: {
-			"/pupils-teachers/rights-and-obligations/": "Права та обов’язки учня",
-			"/pupils-teachers/distance-learning/": "Дистанційне навчання",
+			// "/pupils-teachers/rights-and-obligations/": "Права та обов’язки учня",
+			// "/pupils-teachers/distance-learning/": "Дистанційне навчання",
 			"/pupils-teachers/timetable/": "Розклад занять"
 		},
 		entrant: {
@@ -40,11 +40,10 @@ export const HeaderMenu = () => {
 						ДНЗ “Корсунь-Шевченківський професійний ліцей”
 					</div>
 					<div className={style.menu}>
-						<BlockMenu linkBlock="/" name='Про нас' array={menu.about} />
+						<BlockMenu linkBlock="/about-us" name='Про нас' array={menu.about} />
 						<BlockMenu linkBlock="/pupils-teachers" name='Учням і педагогам' array={menu.forTeacher} />
 						<BlockMenu linkBlock="/entrant" name='Вступникам' />
 						<BlockMenu linkBlock="/npc" name='НПЦ' />
-						<BlockMenu linkBlock="/for-partner" name='Партнерам' />
 					</div>
 				</div>
 

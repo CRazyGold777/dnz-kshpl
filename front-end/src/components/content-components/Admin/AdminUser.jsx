@@ -6,20 +6,20 @@ import { getAUserById, updateAUser, createAUser } from '../../../redux/admin-red
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import style from './Admin.module.css'
 import { AuthRedirectAdmin } from "../../../hook/AuthRedirectAdmin";
+import { AdminPanel } from "../../common-component/Button/ButtonAdminPanel";
 
 const UserBlock = props => {
 	const onSubmit = (value) => {
-
-		console.log(value);
 		if (props.id) {
-			props.updateAUser(props.id, value.login, value.password, value.status);
+			props.updateAUser(props.id, value.login, value.password, value.status, value.people_id);
 		} else {
-			props.createAUser(value.login, value.password, value.status)
+			props.createAUser(value.login, value.password, value.status, value.people_id)
 		}
 	}
 
 	return (
 		<div>
+			<AdminPanel />
 			<h1>Edit User</h1>
 			<Formik
 				initialValues={{ login: props.user.login, password: props.user.password, status: props.user.status }}
@@ -41,11 +41,15 @@ const UserBlock = props => {
 			>
 				{({ isSubmitting }) => (
 					<Form className={style.form}>
+						<p>Login</p>
 						<Field name="login" />
 						<ErrorMessage name="login" component="div" />
-						<Field type="password" name="password" />
+						<p>Password</p>
+						<Field type="text" name="password" />
 						<ErrorMessage name="password" component="div" />
+						<p>Status</p>
 						<Field as="select" name="status">
+							<option value=""></option>
 							<option value="student">student</option>
 							<option value="teacher">teacher</option>
 							<option value="admin">admin</option>

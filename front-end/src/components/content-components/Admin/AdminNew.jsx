@@ -6,6 +6,7 @@ import { getNewsById, updateNews, createNews } from '../../../redux/admin-reduce
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import style from './Admin.module.css'
 import { AuthRedirectAdmin } from "../../../hook/AuthRedirectAdmin";
+import { AdminPanel } from "../../common-component/Button/ButtonAdminPanel";
 
 const NewBlock = props => {
 
@@ -19,6 +20,7 @@ const NewBlock = props => {
 
 	return (
 		<div>
+			<AdminPanel />
 			<h1>Edit New</h1>
 			<Formik
 				initialValues={{

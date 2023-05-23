@@ -43,3 +43,36 @@ export const getNotion = state => {
 export const getNotionFromNR = state => {
 	return state.notion.nArray
 }
+export const getTeachersSelect = state => {
+	return state.adminUsers.teachers
+}
+export const getTeacherSelect = state => {
+	return state.adminUsers.teacher
+}
+export const getStudentsSelect = state => {
+	return state.adminUsers.students
+}
+export const getStudentSelect = state => {
+	return state.adminUsers.student
+}
+export const getSubjectsSelect = state => {
+	return state.adminUsers.subjects
+}
+export const getSubjectSelect = state => {
+	return state.adminUsers.subject
+}
+export const getCoursesSelect = state => {
+	return state.adminUsers.courses
+}
+export const getCourseSelect = state => {
+	return state.adminUsers.course
+}
+export const getLessonsSelect = state => {
+	return state.adminUsers.lessons
+}
+export const getDayLessonsSelect = state => {
+	return state.adminUsers.dayLesson
+}
+export const getLessonSelect = state => {
+	return state.adminUsers.lesson
+}

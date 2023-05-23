@@ -1,9 +1,9 @@
-
+import not_found from '../../../img/webp/404.webp'
 
 export const PageNotFound = props => {
 	return (
-		<div>
-			Page Not Found
+		<div style={{ width: 100 + '%' }}>
+			<img style={{ width: 100 + '%' }} src={not_found} alt="404" />
 		</div>
 	)
 }

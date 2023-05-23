@@ -6,6 +6,7 @@ import style from './Admin.module.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { AuthRedirectAdmin } from '../../../hook/AuthRedirectAdmin'
+import { AdminPanel } from '../../common-component/Button/ButtonAdminPanel'
 
 const ANotion = props => {
 	const [count, changeCount] = useState(10)
@@ -20,6 +21,7 @@ const ANotion = props => {
 
 	return (
 		<div>
+			<AdminPanel />
 			<div className={style.header}>
 				<h1>Notions</h1>
 				<Link to='/admin/notion/create'>Create Notion</Link>

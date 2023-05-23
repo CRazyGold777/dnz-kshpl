@@ -11,8 +11,9 @@ export const AuthRedirectAdmin = (Component) => {
 		}
 	}
 	function RedirectComponent(props) {
-		if (props.status === "admin" && props.isAuth) return <Component {...props} />
-		return <Navigate replace to="/login" />
+		// return <Component {...props} />
+		if (props.status === "admin" && props.isAuth)
+			return <Navigate replace to="/login" />
 
 	}
 	return connect(mapStateToProps, {})(RedirectComponent)

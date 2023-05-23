@@ -123,3 +123,174 @@ export const notionAPI = {
 			})
 	},
 }
+
+export const courseAPI = {
+	createCourse(name_group, year_of_create) {
+		return instance.post('course', { name_group, year_of_create })
+			.then(res => {
+				return res.data
+			})
+	},
+	getCourse(count) {
+		return instance.get(`course?limit=${count}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	getCourseById(id) {
+		return instance.get(`course/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	updateCourse(id, name_group, year_of_create) {
+		return instance.put('course', { id, name_group, year_of_create })
+			.then(res => {
+				return res.data
+			})
+	},
+	deleteCourse(id) {
+		return instance.delete(`course/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+}
+
+export const lessonAPI = {
+	createLesson(week_day, course_id, subject_id, time_id) {
+		return instance.post('lesson', { week_day, course_id, subject_id, time_id })
+			.then(res => {
+				return res.data
+			})
+	},
+	getLesson(count) {
+		return instance.get(`lesson?limit=${count}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	getDayLesson(week_day, course_id) {
+		return instance.get(`lessonDay?week_day=${week_day}&course_id=${course_id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	getLessonById(id) {
+		return instance.get(`lesson/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	updateLesson(id, week_day, course_id, subject_id, time_id) {
+		return instance.put('lesson', { id, week_day, course_id, subject_id, time_id })
+			.then(res => {
+				return res.data
+			})
+	},
+	deleteLesson(id) {
+		return instance.delete(`lesson/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+}
+
+export const studentAPI = {
+	createStudent(pib, course) {
+		return instance.post('student', { pib, course })
+			.then(res => {
+				return res.data
+			})
+	},
+	getStudent(count) {
+		return instance.get(`student?limit=${count}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	getStudentById(id) {
+		return instance.get(`student/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	updateStudent(id, pib, course) {
+		return instance.put('student', { id, pib, course })
+			.then(res => {
+				return res.data
+			})
+	},
+	deleteStudent(id) {
+		return instance.delete(`student/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+}
+
+export const subjectAPI = {
+	createSubject(name_subject, id_teacher) {
+		return instance.post('subject', { name_subject, id_teacher })
+			.then(res => {
+				return res.data
+			})
+	},
+	getSubject(count) {
+		return instance.get(`subject?limit=${count}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	getSubjectById(id) {
+		return instance.get(`subject/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	updateSubject(id, name_subject, id_teacher) {
+		return instance.put('subject', { id, name_subject, id_teacher })
+			.then(res => {
+				return res.data
+			})
+	},
+	deleteSubject(id) {
+		return instance.delete(`subject/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+}
+
+export const teacherAPI = {
+	createTeacher(pib) {
+		return instance.post('teacher', { pib })
+			.then(res => {
+				return res.data
+			})
+	},
+	getTeacher(count) {
+		return instance.get(`teacher?limit=${count}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	getTeacherById(id) {
+		return instance.get(`teacher/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+	updateTeacher(id, pib) {
+		return instance.put('teacher', { id, pib })
+			.then(res => {
+				return res.data
+			})
+	},
+	deleteTeacher(id) {
+		return instance.delete(`teacher/${id}`)
+			.then(res => {
+				return res.data
+			})
+	},
+}

@@ -6,6 +6,7 @@ import style from './Admin.module.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { AuthRedirectAdmin } from '../../../hook/AuthRedirectAdmin'
+import { AdminPanel } from '../../common-component/Button/ButtonAdminPanel'
 
 const ANews = props => {
 	const [count, changeCount] = useState(10)
@@ -19,6 +20,7 @@ const ANews = props => {
 
 	return (
 		<div>
+			<AdminPanel />
 			<div className={style.header}>
 				<h1>News</h1>
 				<Link to='/admin/new/create'>Create News</Link>

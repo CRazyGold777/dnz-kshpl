@@ -26,7 +26,6 @@ const setStatus = (status, auth, message) => ({ type: SET_STATUS, status, auth, 
 
 export const setUser = (user) => dispatch => {
 	authAPI.getStatusUser(user.email, user.password).then(res => {
-		console.log(res);
 		if (res.resultCode === 0) {
 			dispatch(setStatus(res.status, true, res.message))
 		} else {

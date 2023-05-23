@@ -6,6 +6,7 @@ import { getNotionById, updateNotion, createNotion } from '../../../redux/admin-
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import style from './Admin.module.css'
 import { AuthRedirectAdmin } from "../../../hook/AuthRedirectAdmin";
+import { AdminPanel } from "../../common-component/Button/ButtonAdminPanel";
 
 const NotionBlock = props => {
 
@@ -19,6 +20,7 @@ const NotionBlock = props => {
 
 	return (
 		<div>
+			<AdminPanel />
 			<h1>Edit Notion</h1>
 			<Formik
 				initialValues={{

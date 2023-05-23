@@ -3,11 +3,24 @@ import { queryToDB } from '../db.js'
 class UserController {
 	async createUser(req, res) {
 		const { login, password, status } = req.body
-		const query = `INSERT INTO users (login, password, status) VALUES ('${login}', '${password}','${status}');`
-		await queryToDB(query)
-			.then(() => {
-				res.json('Users added')
-			})
+		let query;
+		query = `INSERT INTO users (login, password, status) VALUES ('${login}', '${password}','${status}');`
+		let result;
+		if (query) {
+			try {
+				await queryToDB(query)
+					.then(() => {
+						result = 'Users added';
+					})
+			} catch (error) {
+				result = error.detail
+			}
+
+		}
+		else {
+			result = `${people_id} not found in ${status}s`
+		}
+		res.json(result)
 	}
 	async getUsers(req, res) {
 		const { limit } = req.query

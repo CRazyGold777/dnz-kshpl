@@ -1,0 +1,101 @@
+.pupils>div{
+	margin-bottom: 30px;
+}
+.block1{
+	margin-top: 30px;
+	max-width: 700px;
+	h2{
+		font-weight: 700;
+		font-size: 18px;
+		text-align: center;
+	}
+	ul{
+		margin-left: 30px;
+	}
+	li{
+		list-style-type:number;
+		list-style-position: inside;
+	}
+}
+.block2{
+	display: flex;
+	justify-content: center;
+}
+.block3,.block5{
+	display: flex;
+	justify-content: center;
+	width: auto;
+	&__out{
+		border: 0.5px solid rgba(0, 0, 0, 0.16);
+		padding: 15px;
+	}
+	&__in{
+		border: 1px solid #FDD835 ;
+		padding: 40px 50px;
+		text-align: center;
+	}
+	span{
+		font-weight: 700;
+	}
+}
+.block4{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 30px;
+	&>div{
+		flex: 1 0 40%;
+		padding: 40px;
+	}
+	&>div{
+		border: 0.5px solid rgba(0, 0, 0, 0.16);
+	}
+	&>div>h3{
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+	&>div li{
+		margin-left: 30px;
+		list-style-type:disc;
+		list-style-position: outside;
+	}
+	&>div p{
+		text-indent: 30px;
+	}
+	&>div li,p{
+		text-align:justify;
+		margin-bottom: 5px;
+	}
+	&__img{
+		display: flex;
+		justify-content: center;
+	}
+	&__npc{
+		border: 1px solid #000;
+		padding: 5px;
+		border-radius: 7px;
+		transition: box-shadow 0.3s;
+		&:hover{
+			transition: box-shadow 0.3s;
+			box-shadow: 0 0 3px #000;
+		}
+	}
+}
+.block5{
+	&__out{
+		max-width: 600px;
+	}
+	ul{
+		text-align: justify;
+	}
+	h3{
+		font-weight: 700;
+	}
+	li{
+		list-style-type: disc;
+		list-style-position: outside;
+		margin-left: 20px;
+	}
+}
